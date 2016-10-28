@@ -6,7 +6,7 @@ from main.models import Keja
 
 class KejaAdmin(admin.ModelAdmin):
 	keja=Keja.objects.filter()
-	list_display = ('name','town','locality','pk','pub_date',)
+	list_display = ('rentals_name','town','locality','pk','pub_date',)
 	list_filter = ['pub_date']
 	search_fields = ['town']
 
