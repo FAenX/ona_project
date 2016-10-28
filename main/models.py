@@ -19,7 +19,7 @@ class Keja(models.Model):
 	toilet_photo=models.ImageField(storage=fs)
 	kitchen_photo=models.ImageField(storage=fs)
 	bedroom_photo=models.ImageField(storage=fs)
-	pub_date=models.DateTimeField()
+	_submission_time=models.DateTimeField()
 	_geolocation=GeopositionField()
 
 	def __repr__(self):
