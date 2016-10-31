@@ -9,21 +9,20 @@ fs = FileSystemStorage(location='./media/photos')
 
 class Keja(models.Model):	
 	_id=models.IntegerField(primary_key=True)
-	town=models.CharField(max_length=200,unique=True)
-	locality=models.CharField(max_length=200,unique=True)
-	rentals_name=models.CharField(max_length=200,unique=True)
-	keja_type=models.CharField(max_length=200)
-	contact_name=models.CharField(max_length=200)
-	contact_number=models.IntegerField()	
-	rent=models.IntegerField()
+	town=models.CharField(max_length=200,blank=False)
+	locality=models.CharField(max_length=200,blank=False)
+	rentals_name=models.CharField(max_length=200,blank=False)
+	keja_type=models.CharField(max_length=200,blank=False)
+	contact_name=models.CharField(max_length=200,blank=False)
+	contact_number=models.IntegerField(blank=False)	
+	rent=models.IntegerField(blank=False)
 	toilet_photo=models.ImageField(storage=fs)
 	kitchen_photo=models.ImageField(storage=fs)
 	bedroom_photo=models.ImageField(storage=fs)
-	_submission_time=models.DateTimeField()
-	_geolocation=GeopositionField()
+	_submission_time=models.DateTimeField(blank=False)
+	_geolocation=GeopositionField(blank=False)
 
-	def __repr__(self):
-		return self._id
+	
 
 
 
